@@ -42,19 +42,19 @@ public class Exercicio3 {
         System.out.println("Quantas horas extras você trabalhou?");
         horaExtras = leituraTeclado.nextFloat();
         
-        vlHoraExtras = ((salBruto/240) * horaExtras) / 2;
+        vlHoraExtras = ((salBruto/240) * horaExtras) * 1.5;
         
         System.out.println("Quantas horas extras você trabalhou Domingos e feriados?");
         horaExtrasTotal = leituraTeclado.nextFloat();
         
-        vlHoraExtrasTotal = (salBruto/240) * horaExtrasTotal;
+        vlHoraExtrasTotal = ((salBruto/240) * horaExtrasTotal) * 2;
         
         vlHoraExtras = vlHoraExtras + vlHoraExtrasTotal;
         
         System.out.println("Quantas horas você trabalhou a noite?");
         horaNoturna = leituraTeclado.nextFloat();
         
-        vlHoraNoturna = (((salBruto/30)/8) * horaNoturna) * 0.2;
+        vlHoraNoturna = ((salBruto/240) * horaNoturna) * 1.2;
         
         System.out.println("Informe o mes com um numero");
         /*
@@ -150,18 +150,22 @@ public class Exercicio3 {
         totalBeneficios = vale + valeAlimento + vlHoraExtras + vlHoraNoturna;
             //imprime resultado do desconto e do salario liquido
         System.out.format("Salario bruto: %.2f\n", salBruto);
+        System.out.println("");
         System.out.format("Seu desconto INSS será de: %.2f\n", desc);
         System.out.format("Desconto do vale transporte: %.2f\n", descvt);
         System.out.format("Desconto do vale Alimentaçao: %.2f\n", descva);
-        System.out.format("Você receberá de vale: %.2f\n", vale);
-        System.out.format("Você receberá de vale Alimentação: %.2f\n", valeAlimento);
         System.out.format("Desconto IR: %.2f\n", descontoIR);
-        System.out.format("Você receberá de salário: %.2f\n", sal);
+        System.out.println("");
+        System.out.format("Você receberá de vale Transporte: %.2f\n", vale);
+        System.out.format("Você receberá de vale Alimentação: %.2f\n", valeAlimento);
+        System.out.format("Você receberá de Salário: %.2f\n", sal);
         System.out.format("Você receberá de Hora extras: %.2f\n", vlHoraExtras);
         System.out.format("Você receberá de Adicional noturno: %.2f\n", vlHoraNoturna);
+        System.out.println("");
         System.out.format("Você receberá um total de: %.2f\n", total);
         System.out.format("Você terá um total de descontos: %.2f\n", totalDescontos);
         System.out.format("Você receberá um total de beneficios: %.2f\n", totalBeneficios);
+        System.out.println("");
         
         
 
