@@ -1,0 +1,79 @@
+
+package exerciciovetor3;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class ExercicioVetor3 {
+
+    
+    public static void main(String[] args) {
+        
+        int vetor[] = new int[10];
+        int vetorEle[] = new int[10];
+        int vetorFreq[] = new int[10];
+        
+        Scanner lt = new Scanner(System.in);
+        Arrays.sort(vetor);
+        
+        int media=0, valor=0, pos=0, maiorFreq=0;
+        float mediana=0;
+        
+        String moda="Moda:( ";
+        
+        for (int i = 0; i < 10; i++) {
+            
+            System.out.println("Informe um valor ");
+            valor = lt.nextInt();
+            vetor[i] = valor;
+            vetorEle[i]=-1;
+            vetorFreq[i]=-1;
+            
+        }
+        vetorEle[0]=vetor[0];
+        vetorFreq[0]=1;
+        
+        for (int i = 1; i < vetor.length; i++) {
+            if(vetor[i] != vetor[(i-1)]){
+                pos++;
+                vetorEle[pos] = vetor[i];
+                vetorFreq[pos] = 1;
+                
+            } else{
+                vetorFreq[pos]++;
+            }
+        }
+        
+        for (int i = 0; i < 10; i++) {
+            if(vetorFreq[i]>maiorFreq){
+                maiorFreq = vetorFreq[i];
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+            if(vetorFreq[i] == maiorFreq){
+                moda = moda+vetorEle[i]+", ";
+            }
+        }
+        
+        
+        for (int i = 0; i < 10; i++) {
+            media += vetor[i];
+        }
+        
+        for (int i = 0; i < 10; i++) {
+            mediana = (vetor[4]+vetor[5])/2f;
+            
+        }
+        int index = moda.lastIndexOf(",");
+        moda = moda.substring(0, index) + ')';
+      
+        int soma = media;
+        media = media/10;
+        
+        System.out.println("\nA media eh: " + media);
+        System.out.format("\nA mediana eh : %.1f\n", mediana);
+        System.out.println("\n" + moda);
+        System.out.println("\nA soma eh: " + soma);
+    }
+    
+}
